@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 const axios = require('axios');
 
 const Form = () => {
-
+//setting state
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showReportForm, setShowReportForm] = useState(false);
 
@@ -59,7 +59,7 @@ const Form = () => {
   function updateIncidentDescription(event) {
     setIncidentDescription(event.target.value)
   }
-
+//post for the report
   function postIncidentReports(event) {
     event.preventDefault();
     axios.post('/api/reports', {
@@ -84,7 +84,7 @@ const Form = () => {
       alert('Error creating incident report');
     });
   }
-
+//form build out
   return (
     <div>
       <button className="form__button__submit" onClick={handleOpenModal}>Create Incident Report</button>
